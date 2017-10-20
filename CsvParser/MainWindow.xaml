@@ -1,0 +1,43 @@
+﻿<Window x:Class="CsvParser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CsvParser"
+        mc:Ignorable="d"
+        Title="CSV Parcer" Height="534.409" Width="1009.273">
+	<Grid>
+		<Grid Margin="10,78,10,10">
+
+			<TabControl>
+				<TabItem x:Name="BeelineTab" Header="Beeline">
+					<DataGrid x:Name="MainGrid" Margin="10">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="Номер договора" Width="175" Binding="{Binding Path=ContractNumber}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Группа счетов" Binding="{Binding Path=AccountGroup}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Номер абонента" Binding="{Binding Path=AccountNumber}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Дата звонка" Binding="{Binding Path=Date}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Время звонка" Binding="{Binding Path=Time}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Длительность" Binding="{Binding Path=Duration}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Длительность округленная до минут" Binding="{Binding Path=RoundDuration}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Размер начислений" Binding="{Binding Path=Size}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Инициатор звонка" Binding="{Binding Path=Initiator}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Принимающий номер" Binding="{Binding Path=Acceptor}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Описание действия" Binding="{Binding Path=ActionDescription}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Описание услуги" Binding="{Binding Path=ServiceDescription}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Тип услуги" Binding="{Binding Path=ServiceType}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Номер базовой станции" Binding="{Binding Path=BaseStationNumber}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Объем в МB" Binding="{Binding Path=ValumeMb}"></DataGridTextColumn>
+							<DataGridTextColumn Header="Описание провайдера" Binding="{Binding Path=ProviderDescription}"></DataGridTextColumn>
+						</DataGrid.Columns>
+					</DataGrid>
+				</TabItem>
+			</TabControl>
+		</Grid>
+		<Button x:Name="StartBtn" Content="Start" Margin="0,21,25,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Click="StartBtn_Click"/>
+		<Button x:Name="OpenFileBtn" Content="Open" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="100" Click="OpenFileBtn_Click"/>
+		<Label x:Name="FileNameLbl" Content="" HorizontalAlignment="Left" Margin="115,21,0,0" VerticalAlignment="Top"/>
+		<CheckBox x:Name="OnlyPaidCheck" Content="Только платные услуги" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
+
+	</Grid>
+</Window>
